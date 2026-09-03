@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONCRETO — Streetwear</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="fita-aviso"></div>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a href="index.html" class="marca">CONCRETO<span>.</span></a>
+      <nav class="nav-principal">
+        <a href="index.html" class="ativo">Loja</a>
+        <a href="index.html#novidades">Novidades</a>
+        <a href="carrinho.html">Sacola</a>
+      </nav>
+      <div class="acoes-topo">
+        <span data-area-usuario></span>
+        <a class="icone-carrinho" href="carrinho.html">
+          Sacola <span class="contador-carrinho" data-contador-carrinho>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-selo">SEM<br>ESTOQUE<br>PARADO</div>
+    <div class="hero-conteudo">
+      <div>
+        <h1>ROUPA FEITA<br>PRA RUA, NÃO<br>PRA VITRINE.</h1>
+        <p>Peças oversized, cortes retos e estampas autorais. Produção limitada, sem reposição — o que sair de linha, não volta.</p>
+        <a href="#vitrine" class="botao botao--sinalizacao">Ver coleção</a>
+      </div>
+      <div class="hero-visual"><span>FOTO DO DROP<br>ATUAL AQUI</span></div>
+    </div>
+  </section>
+
+  <section class="secao" id="vitrine">
+    <div class="wrap">
+      <div class="secao-cabecalho">
+        <h2>Vitrine</h2>
+      </div>
+
+      <div class="filtros-categoria">
+        <button type="button" class="filtro-chip ativo" data-filtro-categoria="">Tudo</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="Camiseta">Camisetas</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="Moletom">Moletons</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="Boné">Bonés</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="Calça">Calças</button>
+      </div>
+
+      <div class="grade-produtos" data-grade-produtos></div>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <span>© 2026 Concreto Streetwear. Feita em Florianópolis.</span>
+      <div class="selos-pagamento">
+        <span>PIX</span><span>VISA</span><span>MASTER</span><span>ELO</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/loja.js"></script>
+</body>
+</html>

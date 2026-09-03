@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — CONCRETO</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="fita-aviso"></div>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a href="index.html" class="marca">CONCRETO<span>.</span></a>
+      <nav class="nav-principal">
+        <a href="index.html">Loja</a>
+      </nav>
+      <div class="acoes-topo"><span data-area-usuario></span></div>
+    </div>
+  </header>
+
+  <div class="pagina-formulario">
+    <h1>Entrar</h1>
+    <p class="subtitulo">Acesse sua conta pra acompanhar pedidos e finalizar compras.</p>
+
+    <div class="mensagem-erro" data-erro></div>
+
+    <form data-form-login>
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+      </div>
+      <button type="submit" class="botao botao--sinalizacao botao--bloco">Entrar</button>
+    </form>
+
+    <p class="link-secundario">Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento — CONCRETO</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- SDK oficial do Mercado Pago: tokeniza o cartão no navegador do cliente.
+       O número do cartão nunca passa pelo nosso backend, só o token gerado aqui. -->
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+  <div class="fita-aviso"></div>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a href="index.html" class="marca">CONCRETO<span>.</span></a>
+      <nav class="nav-principal">
+        <a href="index.html">Loja</a>
+      </nav>
+      <div class="acoes-topo"><span data-area-usuario></span></div>
+    </div>
+  </header>
+
+  <div class="pagina-formulario" data-checkout style="max-width:520px;">
+    <h1>Pagamento</h1>
+    <p class="subtitulo">Total do pedido: <strong data-total-checkout>R$ 0,00</strong></p>
+
+    <div class="mensagem-erro" data-mensagem-checkout style="display:block;background:transparent;border:none;color:var(--ferrugem);padding:0;margin-bottom:12px;"></div>
+
+    <div class="abas-pagamento">
+      <button type="button" class="aba-pagamento ativa" data-aba-pagamento="pix">Pix</button>
+      <button type="button" class="aba-pagamento" data-aba-pagamento="cartao">Cartão de crédito</button>
+    </div>
+
+    <!-- ---------- Painel Pix ---------- -->
+    <div class="painel-pagamento ativo" data-painel-pagamento="pix">
+      <div class="campo">
+        <label for="email-pix">E-mail</label>
+        <input type="email" id="email-pix" data-email-pix required>
+      </div>
+      <div class="campo">
+        <label for="cpf-pix">CPF do pagador</label>
+        <input type="text" id="cpf-pix" data-cpf-pix placeholder="000.000.000-00" required>
+      </div>
+      <button type="button" class="botao botao--sinalizacao botao--bloco" data-pagar-pix>Gerar Pix</button>
+    </div>
+
+    <!-- ---------- Painel Cartão ---------- -->
+    <div class="painel-pagamento" data-painel-pagamento="cartao">
+      <form id="form-cartao">
+        <div class="campo">
+          <label for="campo-nome-cartao">Nome no cartão</label>
+          <input type="text" id="campo-nome-cartao">
+        </div>
+        <div class="campo">
+          <label for="campo-numero-cartao">Número do cartão</label>
+          <div id="campo-numero-cartao" style="border:2px solid var(--tinta);padding:12px 14px;background:var(--concreto);"></div>
+        </div>
+        <div class="linha-2-colunas">
+          <div class="campo">
+            <label for="campo-validade-cartao">Validade</label>
+            <div id="campo-validade-cartao" style="border:2px solid var(--tinta);padding:12px 14px;background:var(--concreto);"></div>
+          </div>
+          <div class="campo">
+            <label for="campo-cvv-cartao">CVV</label>
+            <div id="campo-cvv-cartao" style="border:2px solid var(--tinta);padding:12px 14px;background:var(--concreto);"></div>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="campo-email-cartao">E-mail</label>
+          <input type="email" id="campo-email-cartao">
+        </div>
+        <div class="linha-2-colunas">
+          <div class="campo">
+            <label for="campo-tipo-documento">Tipo de documento</label>
+            <select id="campo-tipo-documento"></select>
+          </div>
+          <div class="campo">
+            <label for="campo-cpf-cartao">CPF do titular</label>
+            <input type="text" id="campo-cpf-cartao">
+          </div>
+        </div>
+        <div class="linha-2-colunas">
+          <div class="campo">
+            <label for="campo-banco-emissor">Banco emissor</label>
+            <select id="campo-banco-emissor"></select>
+          </div>
+          <div class="campo">
+            <label for="campo-parcelas">Parcelas</label>
+            <select id="campo-parcelas"></select>
+          </div>
+        </div>
+        <button type="button" class="botao botao--sinalizacao botao--bloco" data-pagar-cartao>Pagar com cartão</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
